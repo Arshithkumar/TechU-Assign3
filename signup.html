@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <form>
+                <div class="nav">
+                    <h1 id="ele1"><a href="index.html" onclick="color()">Login</a></h1>
+                    <h1 id="ele2"><a href="signup.html">SignUp</a></h1>
+                </div>
+                <div class="sec">
+                    <div class="username">
+                        <h4>Username</h4>
+                        <h4>:</h4>
+                        <input id="user" type="text" placeholder="create a username">
+                    </div>
+                    <div class="mail">
+                        <h4>Email</h4>
+                        <h4>:</h4>
+                        <input id="mail" type="email" placeholder="Enter your email">
+                    </div>
+                    <div class="password">
+                        <h4>Password</h4>
+                        <h4>:</h4>
+                        <input id="pass" type="password" placeholder="create password">
+                    </div>
+                    <div class="conf-pass">
+                        <h4>Confirm Password</h4>
+                        <h4>:</h4>
+                        <input id="con-pass" type="password" placeholder="confirm password">
+                    </div>
+                    <div class="alert"></div>
+                    <div class="btn">
+                        <center>
+                            <button class="button2" type="button">Submit</button>
+                        </center>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="signup.js"></script>
+</body>
+</html>
