@@ -2,7 +2,11 @@ body{
     background-image: linear-gradient(rgba(73, 73, 142, 0.8),rgba(73, 73, 142, 0.8)),url('img/bg.jpg');
     background-size:cover;
 
-
+}
+.container{
+    width: auto;
+    /* align-items: center;
+    justify-content: center; */
 }
 #ele1 a{
     background-color: lightgray;
@@ -36,7 +40,7 @@ a{
 
 .card{
     background-color: lightgray;
-    margin:100px 550px;
+    margin:100px auto;
     height: auto;
     width: 600px;
     border-radius: 5px;

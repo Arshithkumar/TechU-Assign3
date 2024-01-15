@@ -33,7 +33,7 @@ a{
 }
 .card{
     background-color:lightgray;
-    margin:100px 500px;
+    margin:100px auto;
     height: auto;
     width: 700px;
     border-radius: 5px;
