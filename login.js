@@ -1,4 +1,4 @@
-var btn =document.querySelector("button");
+var btn =document.querySelector("button.button2");
 var inp_mail =document.getElementById("mail");
 var pass=document.getElementById('pass');
 var m=''
