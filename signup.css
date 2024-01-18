@@ -177,3 +177,7 @@ input{
   p{
     color: red;
   }
+
+  ::placeholder {
+    text-align: center;
+}

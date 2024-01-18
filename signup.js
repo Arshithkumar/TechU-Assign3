@@ -70,64 +70,97 @@ function mail() {
 
 
 
-    if (us == '') {
+    if (!us || !m || !pdd || !cdd) {
         var p = document.createElement("p");
-        p.innerHTML = "username can't be empty!";
+        p.innerHTML = "All fields must be filled!";
         crd.appendChild(p);
-    }
-    else if (!(validateuser(us))) {
-        var p = document.createElement("p");
-        p.innerHTML = "username must be in alphanumeric";
-        crd.appendChild(p);
-    }
-    // else{
-    //     var x1=document.getElementById('user')
-    //     x1.classList.add('green');
-    // }
-
-    if (m == '') {
-        var p = document.createElement("p");
-        p.innerHTML = "mail can't be empty!";
-        crd.appendChild(p);
-        // alert("mail can't be empty!");
-    }
-    else if (!(validateEmail(m))) {
-        var p = document.createElement("p");
-        p.innerHTML = "Invalid mail format!";
-        crd.appendChild(p);
-    }
-
-    if (pdd == '') {
-        var p = document.createElement("p");
-        p.innerHTML = "fill the password";
-        crd.appendChild(p);
-        // alert('fill the password');
+        return;
     }
     else {
-        // $(document).on('click', '.button2', function () {
-        //     // var pdd = $(this).val();
-        //     var regPass = "^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*-_]).{8,}$";
-        //     var color = "Red";
+        if (!(validateuser(us))) {
+            var p = document.createElement("p");
+            p.innerHTML = "username must be in alphanumeric";
+            crd.appendChild(p);
+            return;
+        }
+
+        if (!(validateEmail(m))) {
+            var p = document.createElement("p");
+            p.innerHTML = "Invalid mail format!";
+            crd.appendChild(p);
+            return;
+        }
+
         if (pdd.length > 7) {
             if (!pdd.match(regPass)) {
                 var p = document.createElement("p");
                 p.innerHTML = "Include a special character and at least one capital letter and number";
                 crd.appendChild(p);
+                return;
             }
         }
         else {
             var p = document.createElement("p");
             p.innerHTML = "Password minimum length be 8";
             crd.appendChild(p);
+            return;
         }
-        // });
+        if (pdd != cdd) {
+            var p = document.createElement("p");
+            p.innerHTML = "Password and confirm must be same!";
+            crd.appendChild(p);
+            return;
+        }
     }
 
-    if (pdd != cdd) {
+    // Retrieve existing users from local storage
+    var existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check if the username or email already exists
+    if (existingUsers.some(user => user.username === us || user.email === m)) {
         var p = document.createElement("p");
-        p.innerHTML = "Password and confirm must be same!";
+        p.innerHTML = "Username or email already exists. Please choose a different one.";
         crd.appendChild(p);
+        // crd.innerHTML = "Username or email already exists. Please choose a different one.";
+        return;
     }
+
+    // Create a new user object
+    var newUser = {
+        username: us,
+        email: m,
+        password: pdd
+    };
+
+    // Add the new user to the existing users array
+    existingUsers.push(newUser);
+
+    // Save the updated users array back to local storage
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+    // Show signup success message
+    // signupMessage.innerHTML = "User signed up successfully!";
+
+    // Redirect to the login page
+    window.location.href = "index.html";
+
+
+    // else{
+    //     var x1=document.getElementById('user')
+    //     x1.classList.add('green');
+    // }
+
+
+    // else {
+    //     // $(document).on('click', '.button2', function () {
+    //     //     // var pdd = $(this).val();
+    //     //     var regPass = "^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*-_]).{8,}$";
+    //     //     var color = "Red";
+
+    //     // });
+    // }
+
+
 }
 
 function handleclick() {
@@ -135,11 +168,9 @@ function handleclick() {
     while (crd.hasChildNodes()) {
         crd.removeChild(crd.lastElementChild);
     }
-
     // while(inp.classList.value=='green'){
     //     inp.classList.remove('green');
     // }
-
     mail();
 }
 

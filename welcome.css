@@ -1,0 +1,24 @@
+body{
+    background-image: linear-gradient(rgba(73, 73, 142, 0.8),rgba(73, 73, 142, 0.8)),url('img/bg.jpg');
+    background-size:cover;
+
+}
+ h1{
+    color:white;
+    font-size:5rem;
+    text-align: center;
+ }
+
+ h4{
+    color:white;
+    font-size: 30px;
+    text-align: center;
+ }
+
+ .card{
+    padding: 50px;
+    width:1000px;
+    height: 500px;
+    margin: auto;
+    backdrop-filter: blur(20px);
+ }
