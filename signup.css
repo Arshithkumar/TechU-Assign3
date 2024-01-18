@@ -2,46 +2,60 @@ body{
     background-image: linear-gradient(rgba(0,0,50,0.8),rgba(88, 88, 132, 0.8)),url('img/wp9024400.webp');
     background-size: cover;
 }
-
+.hed{
+    text-decoration: underline;
+}
 h4{
     font-size: 25px;
 }
 
 .nav{
     display: flex;
-    background-color: white;
-    /* justify-content: space-between; */
+    background-color: transparent;
+    justify-content: center;
     border-radius: 5px;
 }
 #ele1{
     border-right: 2px solid black;
 }
+#ele2{
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+}
 
-a{
-    color: red;
+a button{
+    color: white;
+    font-size: 1.5rem;
     text-decoration: none;
+    background:transparent;
     /* border: 2px solid black; */
     /* padding:20px 75px; */
     padding-left: 130px;
-    padding-right: 128.5px;
+    padding-right: 125.5px;
     padding-top: 24px;
     padding-bottom: 25px;
     border-radius: 5px;
-}
-#ele2 a{
-    background-color: lightgray;
+    border: none;
 }
 .card{
-    background-color:lightgray;
+    background-color: transparent;
+    
     margin:100px auto;
     height: auto;
     width: 700px;
+    border: 2px solid white;
     border-radius: 5px;
     padding-bottom: 30px;
     
 }
+
+
 .sec{
-    margin: 50px;
+    padding: 50px;
+    align-items: center;
+    color: white;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 .username{
     display: flex;

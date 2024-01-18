@@ -3,52 +3,66 @@ body{
     background-size:cover;
 
 }
+
+.hed{
+    text-decoration:underline;
+}
 .container{
     width: auto;
     /* align-items: center;
     justify-content: center; */
 }
-#ele1 a{
-    background-color: lightgray;
-}
+
 h4{
     font-size:25px;
 }
 
 .nav{
     display: flex;
-    background-color: white;
-    justify-content: space-between;
+    background-color: transparent;
+    justify-content: center;
     border-radius: 5px;
     
 }
 #ele1{
     border-right: 2px solid black;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
-a{
-    color: red;
+a button{
+    color: white;
+    font-size: 1.5rem;
     text-decoration: none;
+    background:transparent;
     /* border: 2px solid black; */
     padding-left: 75px;
-    padding-right: 150px;
+    padding-right: 133px;
     padding-top: 24px;
     padding-bottom: 25px;
     border-radius: 5px;
+    border: none;
+    /* backdrop-filter: blur(2px); */
+    
 }
 
 
 .card{
-    background-color: lightgray;
+    background-color:  transparent;
+    
     margin:100px auto;
     height: auto;
     width: 600px;
+    border: 2px solid white;
     border-radius: 5px;
     padding-bottom: 5px;
 }
 .sec{
-    margin: 50px;
+    padding: 50px;
     align-items:center;
+    color: white;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 .mail{
     display: flex;
